@@ -10,9 +10,9 @@
 PROGRAM_NAME := $(shell basename `readlink -f .`)
 
 # compiler
-CXX := clang++
+CXX := g++
 CXXFLAGS := -std=c++2b \
-             -Weverything -Wall -Wextra -Wpointer-arith -Wcast-qual \
+             -Wall -Wextra -Wpointer-arith -Wcast-qual \
              -Wno-missing-braces -Wempty-body \
              -Wno-error=deprecated-declarations \
              -Wno-c++98-compat \
