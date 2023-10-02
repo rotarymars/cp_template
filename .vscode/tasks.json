@@ -18,6 +18,20 @@
           "kind": "test",
           "isDefault": true
         }
+      },
+      {
+        "label": "make clean",
+        "type": "shell",
+        "command": "make",
+        "args": [
+          "clean"
+        ],
+        "options": {
+          "cwd": "${fileDirname}/.."
+        },
+        "problemMatcher": [
+          "$gcc"
+        ]
       }
     ]
   }
