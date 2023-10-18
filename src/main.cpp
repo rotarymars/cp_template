@@ -1,8 +1,5 @@
-﻿#include <algorithm>
+﻿#include <bits/stdc++.h>
 #include <iostream>
-#include <string>
-#include <vector>
-
 using namespace std;
 
 int main()
@@ -11,6 +8,6 @@ int main()
     ios_base::sync_with_stdio(false);
 
     // write code here
-    
+    cout << "こんにちは\nAtCoder\n";
     return 0;
 }

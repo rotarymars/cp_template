@@ -1,0 +1,35 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "make test",
+        "type": "shell",
+        "command": "bash",
+        "args": ["oj_helper.sh", "t"],
+        "options": {
+          "cwd": "${fileDirname}/.."
+        },
+        "problemMatcher": ["$gcc"]
+      },
+      {
+        "label": "make clean",
+        "type": "shell",
+        "command": "make",
+        "args": ["clean"],
+        "options": {
+          "cwd": "${fileDirname}/.."
+        },
+        "problemMatcher": ["$gcc"]
+      },
+      {
+        "label": "make submit",
+        "type": "shell",
+        "command": "bash",
+        "args": ["oj_helper.sh", "s"],
+        "options": {
+          "cwd": "${fileDirname}/.."
+        },
+        "problemMatcher": ["$gcc"]
+      }
+    ]
+  }
