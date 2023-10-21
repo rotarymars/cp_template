@@ -65,5 +65,8 @@ elif sys.argv[1] == 's':
     cmd = f'oj s -y {url} {sys.argv[2]}'
     # print(cmd)
     os.system(cmd)
+elif sys.argv[1] == 'l':
+    cmd = f'oj l {url}'
+    os.system(cmd)
 else:
     print(f'unknown action {sys.argv[1]}')
