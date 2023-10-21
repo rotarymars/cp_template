@@ -30,6 +30,16 @@
           "cwd": "${fileDirname}/.."
         },
         "problemMatcher": ["$gcc"]
+      },
+      {
+        "label": "make login",
+        "type": "shell",
+        "command": "bash",
+        "args": ["oj_helper.sh", "l"],
+        "options": {
+          "cwd": "${fileDirname}/.."
+        },
+        "problemMatcher": ["$gcc"]
       }
     ]
   }
