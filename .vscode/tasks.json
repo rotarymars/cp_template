@@ -30,6 +30,26 @@
           "cwd": "${fileDirname}/.."
         },
         "problemMatcher": ["$gcc"]
+      },
+      {
+        "label": "oj login",
+        "type": "shell",
+        "command": "bash",
+        "args": ["oj_helper.sh", "l"],
+        "options": {
+          "cwd": "${fileDirname}/.."
+        },
+        "problemMatcher": ["$gcc"]
+      },
+      {
+        "label": "oj log out",
+        "type": "shell",
+        "command": "bash",
+        "args": ["oj_helper.sh", "lo"],
+        "options": {
+          "cwd": "${fileDirname}/.."
+        },
+        "problemMatcher": ["$gcc"]
       }
     ]
   }

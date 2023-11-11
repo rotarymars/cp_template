@@ -3,10 +3,11 @@ import pathlib
 import sys
 import re
 import json
+import onlinejudge.utils as utils
 
 CONFIG_FILE='oj_settings.json'
 
-def read_confug_url(): 
+def read_confug_url():
     if os.path.exists(CONFIG_FILE):
         with open(CONFIG_FILE) as file:
             obj = json.load(file)
@@ -16,7 +17,7 @@ def read_confug_url():
                 print(f"no url configuration in {CONFIG_FILE}")
     else:
         print(f'config file({CONFIG_FILE}) does not exist')
-    
+
     return None
 
 def target_url():
@@ -41,14 +42,14 @@ def target_url():
         else:
             print(f'AtCoder contest:{contest_type} num:{contest_num} problem:{problem}')
             return f'https://atcoder.jp/contests/{contest_type}{contest_num}/tasks/{contest_type}{contest_num}_{problem}'
-    else:                                                                                                   
+    else:
         print(f'cannot resolve problem from dir {base_dir}')
 
 
     return None
 
 if len(sys.argv) < 2:
-    print("usage: oj_help [ds] [main.cpp]")
+    print("usage: oj_helper [ds] [main.cpp]")
     sys.exit(1)
 
 url = target_url()
@@ -62,11 +63,19 @@ if sys.argv[1] == 'd':
     # print(cmd)
     os.system(cmd)
 elif sys.argv[1] == 's':
-    cmd = f'oj s -y {url} {sys.argv[2]}'
+    lang = ''
+    # if re.match(r'^https://atcoder.jp/', url):
+    #     lang = '-l 5031'
+
+    cmd = f'oj s {lang} -y {url} {sys.argv[2]}'
     # print(cmd)
     os.system(cmd)
 elif sys.argv[1] == 'l':
     cmd = f'oj l {url}'
     os.system(cmd)
+elif sys.argv[1] == 'lo':
+    cookie_path = utils.default_cookie_path
+    print(f'log out(remove cookie file:{cookie_path})')
+    os.remove(cookie_path)
 else:
     print(f'unknown action {sys.argv[1]}')
